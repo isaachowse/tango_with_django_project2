@@ -10,9 +10,9 @@
     <h1>Cute little website</h1>
     <div>
         {% if user.is_authenticated %}
-            Hello {{user.username}}!
+            howdy {{ user.username }}!
         {% else %}
-            Hello yaoi lover!
+            hey there partner!
         {% endif %}
     </div>
     <hr />
@@ -39,13 +39,6 @@
     </div>
 {% endblock %}
 
-{% block nav_block %}
-    <ul>
-        <li><a href="{% url 'rango:add_category' %}">Add a New Category</a><br /></li>
-        <li><a href="{% url 'rango:about' %}">About</a></li>
-        <li><a href="{% url 'rango:index' %}">Index</a></li>
-    </ul>
-{% endblock %}
 
 {% block footer_block %}
     <strong>{{ boldmessage }}</strong><br />

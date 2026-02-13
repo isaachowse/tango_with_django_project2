@@ -29,10 +29,14 @@
 {% endblock %}
 
 {% block nav_block %}
+    {{ block.super }}
+    {% if user.is_authenticated %}
     <ul>
-        <li><a href="{% url 'rango:add_category' %}">Add a New Category</a><br /></li>
-        <li><a href="{% url 'rango:about' %}">About</a></li>
-        <li><a href="{% url 'rango:index' %}">Index</a></li>
-        <li><a href="{% url 'rango:add_page' category.slug %}">Add a New Page</a></li>
+        <li>
+            <a href="{% url 'rango:add_page' category.slug %}">
+                Add a New Page
+            </a>
+        </li>
     </ul>
+    {% endif %}
 {% endblock %}
