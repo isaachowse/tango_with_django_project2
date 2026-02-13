@@ -1,8 +1,9 @@
 {% extends 'rango/base.html' %}
 {% load static %}
+{% load rango_template_tags %} 
 
 {% block title_block %}
-    Home
+    Homepage
 {% endblock %}
 
 {% block body_block %}
@@ -17,17 +18,9 @@
     <hr />
     <h2>Most Liked Categories</h2>
     <div>
-        {% if categories %}
-            <ul>
-                {% for category in categories %}
-                    <li>
-                        <a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <strong>There are no categories present.</strong>
-        {% endif %}
+        {% block sidebar_block %}
+            {% get_category_list category %}
+        {% endblock %}
     </div>
     <hr />
     <h2>Most Viewed Pages</h2>
