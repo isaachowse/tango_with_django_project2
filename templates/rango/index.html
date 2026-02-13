@@ -6,30 +6,12 @@
 {% endblock %}
 
 {% block body_block %}
-    <h1>Cute little website</h1>
-    <div>
-        {% if user.is_authenticated %}
-            Hello {{user.username}}!
-        {% else %}
-            Hello yaoi lover!
-        {% endif %}
-    </div>
-
-    <div>
-        {% if categories %}
-            <ul>
-                {% for category in categories %}
-                    <li>
-                        <a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <strong>There are no categories present.</strong>
-        {% endif %}
+    <h1>Rango says...</h1>
 {% endblock %}
 
 {% block footer_block %}
+    hey there partner! <br />
     <strong>{{ boldmessage }}</strong><br />
-    <img src="{% static 'images/houseyaoi.jpg' %}" alt="House Yaoi!" />
+    <a href="/rango/about/">About</a><br />
+    <img src="/static/images/rango.jpg" alt="Picture of Rango" />
 {% endblock %}
