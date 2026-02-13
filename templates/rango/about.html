@@ -6,7 +6,9 @@
 
 {% block body_block %}
     <h1>here is the about page.</h1>
-    <p>This tutorial has been put together by Yaoi.</p><hr />
-    <a href="/rango/">Index</a><hr />
+    <p>This tutorial has been put together by Yaoi.</p>
+    <p>Visits: {{ visits }}</p>
+{% endblock %}
+{% block footer_block %}
     <img src="/static/images/rango.jpg" alt="Picture of Rango" />
 {% endblock %}
