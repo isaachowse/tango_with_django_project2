@@ -1,0 +1,35 @@
+{% extends 'rango/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    Home
+{% endblock %}
+
+{% block body_block %}
+    <h1>Cute little website</h1>
+    <div>
+        {% if user.is_authenticated %}
+            Hello {{user.username}}!
+        {% else %}
+            Hello yaoi lover!
+        {% endif %}
+    </div>
+
+    <div>
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                    <li>
+                        <a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+{% endblock %}
+
+{% block footer_block %}
+    <strong>{{ boldmessage }}</strong><br />
+    <img src="{% static 'images/houseyaoi.jpg' %}" alt="House Yaoi!" />
+{% endblock %}
