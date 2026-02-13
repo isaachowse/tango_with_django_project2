@@ -18,6 +18,13 @@
             {% endblock %}
         </div>
         <hr />
+        {% block nav_block %}
+       <ul>
+            <li><a href="{% url 'rango:about' %}">About</a></li>
+            <li><a href="{% url 'rango:index' %}">Index</a></li>
+        </ul>
+        {% endblock %}
+        <hr />
         {% block footer_block %}
         {% endblock %}
     </body>
